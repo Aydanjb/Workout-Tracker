@@ -1,0 +1,21 @@
+﻿services:
+  db:
+    container_name: workout_db
+    image: postgres
+    secrets:
+      - postgres_password
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: /run/secrets/postgres_password
+    volumes:
+      - db:/data/postgres
+    ports:
+      - "5432:5432"
+
+volumes:
+  db:
+
+secrets:
+  postgres_password:
+    file: ./password.txt

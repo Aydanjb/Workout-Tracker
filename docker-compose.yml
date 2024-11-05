@@ -5,7 +5,7 @@
     secrets:
       - postgres_password
     environment:
-      POSTGRES_DB: test_db
+      POSTGRES_DB: workout_tracker
       POSTGRES_USER: user
       POSTGRES_PASSWORD: /run/secrets/postgres_password
     volumes:
